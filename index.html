@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Платформа Парадигма</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #050505;
+      color: #00ffe1;
+      font-family: 'Oxanium', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2em;
+      overflow: hidden;
+    }
+
+    h1.glitch {
+      font-size: 3.2em;
+      position: relative;
+      color: #00ffe1;
+    }
+
+    h1.glitch::before,
+    h1.glitch::after {
+      content: 'PARADIGMA';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: #00ffe1;
+      background: transparent;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    h1.glitch::before {
+      animation: glitchTop 2s infinite linear alternate-reverse;
+      color: #00f0ff;
+    }
+
+    h1.glitch::after {
+      animation: glitchBottom 3s infinite linear alternate-reverse;
+      color: #ffffff;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      5% { clip: rect(5px, 9999px, 20px, 0); transform: translate(-2px, -2px); }
+      10% { clip: rect(10px, 9999px, 25px, 0); transform: translate(2px, 0); }
+      15% { clip: rect(5px, 9999px, 10px, 0); transform: translate(-1px, 2px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: translate(0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      5% { clip: rect(20px, 9999px, 35px, 0); transform: translate(2px, 2px); }
+      10% { clip: rect(30px, 9999px, 40px, 0); transform: translate(-2px, 1px); }
+      15% { clip: rect(20px, 9999px, 30px, 0); transform: translate(1px, -1px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: translate(0, 0); }
+    }
+
+    p.description {
+      font-size: 1em;
+      max-width: 600px;
+      color: #a0fdf5;
+      margin: 1em 0 2em;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 1em 2em;
+      background: transparent;
+      border: 2px solid #00ffe1;
+      color: #00ffe1;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: #00ffe1;
+      color: #050505;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch">PARADIGMA</h1>
+  <p class="description">Независимая структура, функционирующая вне юрисдикции и служащая целям чистой науки.</p>
+  <a href="archive.html" class="button">Войти в архив</a>
+</body>
+</html>
